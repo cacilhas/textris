@@ -5,6 +5,7 @@ use crate::elapsed::Elapsed;
 use crate::field::Field;
 use crate::tetromino::{Tetromino, Tetrominos, N_TETROS};
 use rand::rngs::ThreadRng;
+use rand::seq::SliceRandom;
 use rand::{thread_rng, Rng};
 use std::collections::HashMap;
 
@@ -27,11 +28,11 @@ where
     }
 
     pub fn random_tetro(&mut self) -> Tetromino {
-        *self.rng.choose(&self.tetros).unwrap()
+        *self.tetros.choose(&mut self.rng).unwrap()
     }
 
     pub fn random_tetro_dir(&mut self) -> Dir {
-        *self.rng.choose(&self.dirs).unwrap()
+        *self.dirs.choose(&mut self.rng).unwrap()
     }
 
     pub fn random_tetro_pos(&mut self, width: usize) -> Coord {
