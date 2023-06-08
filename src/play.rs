@@ -36,7 +36,7 @@ where
     }
 
     pub fn random_tetro_pos(&mut self, width: usize) -> Coord {
-        Coord(self.rng.gen_range(0, width as i8), 0)
+        Coord(self.rng.gen_range(0..width as i8), 0)
     }
 }
 
