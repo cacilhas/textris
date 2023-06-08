@@ -25,6 +25,7 @@ impl KeyConverter {
                 Key::Left => Move(Dir::Left),
                 Key::Right => Move(Dir::Right),
                 Key::Down => Move(Dir::Down),
+                Key::Up => Rotate(RotateDir::Clockwise),
                 Key::Char('d') => Rotate(RotateDir::AntiClockwise),
                 Key::Char('f') => Rotate(RotateDir::Clockwise),
                 Key::Char('\n') => Select,

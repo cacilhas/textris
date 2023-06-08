@@ -16,12 +16,6 @@ impl Block {
 
 impl fmt::Display for Block {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(
-            f,
-            "{}{}{}",
-            color::Fg(self.color),
-            self.chr,
-            color::Fg(color::Reset)
-        )
+        write!(f, "{} {}", color::Bg(self.color), color::Bg(color::Black))
     }
 }

@@ -49,6 +49,7 @@ fn key_name(key: Key) -> String {
         Key::Left => "←".to_string(),
         Key::Right => "→".to_string(),
         Key::Down => "↓".to_string(),
+        Key::Up => "↑".to_string(),
         _ => "".to_string(),
     }
 }
