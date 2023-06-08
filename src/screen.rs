@@ -107,7 +107,12 @@ impl<W: Write> Screen<W> {
         let y = FIELD_Y as u16;
 
         let next_block = play.next_tetro_hint();
-        write!(self.stdout, "{}Next: {}", Goto(x, y), next_block)?;
+        write!(
+            self.stdout,
+            "{}Next: {}",
+            Goto(x, y),
+            next_block.render_next()
+        )?;
         write!(self.stdout, "{}?: Help", Goto(x, y + 2))?;
         write!(self.stdout, "{}Time:  {}", Goto(x, y + 4), play.elapsed())?;
         write!(self.stdout, "{}Score: {}", Goto(x, y + 5), play.score())?;
